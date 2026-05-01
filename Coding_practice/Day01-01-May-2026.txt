@@ -1,0 +1,47 @@
+
+
+
+ - name: Install Nginx on Pathnex server 
+   hosts: all 
+   become: yes 
+
+    tasks:
+    - name:install nginx
+      yum:
+        name:ngnix
+      state: present
+
+
+
+
+
+
+
+          // DESCRIPTION 
+
+
+1. - name: Install Nginx on Pathnex server = Just description 
+
+2. hosts: all = all servers defined in your inventory file.
+                This tells Ansible which machines (servers) to run on.
+          we can also use:
+     
+            web → only web servers group
+             db → only database servers
+
+3. become: yes = This means run commands with sudo/root privileges.(Installing software (like Nginx) needs admin access.)
+
+4. tasks:  This starts a list of tasks.
+           Everything under it must be properly indented.
+
+
+           **what is inside the task**
+
+       name: install nginx = Package name to install.
+       yum: this is module used for- amazon Linux
+       
+       state: present = Ensures the package is installed.
+             Other options:
+
+               absent → uninstall
+               latest → upgrade to latest version
