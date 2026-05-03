@@ -7,4 +7,4 @@ EC2 - 1 hour
 
 tommorow task 
 yml
-revision 
+revision .
