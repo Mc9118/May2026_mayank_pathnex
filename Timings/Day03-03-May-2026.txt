@@ -1,0 +1,4 @@
+what did today 
+due to health issue not do too much 
+Just work on Linux command 
+integrate Ec2 using putty 
