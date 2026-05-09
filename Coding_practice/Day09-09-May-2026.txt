@@ -1,0 +1,37 @@
+
+Ansible — Use Jinja2 Template
+---
+
+- name: Deploy template for pathnex 
+  hosts: all 
+  become: yes 
+
+    tasks:
+      - name:copy template file 
+        template:
+          src: pathnex.conf.j2
+          dest: /etc/pathnec.conf  
+
+
+   TERRAFORM - INTERNET GATEWAY
+
+    resource "aws_inernet_gateway" "pathnexxIGW" {
+        vpc_id=aws.vpc_pathnexVPX.id
+
+        tags ={
+            Name ="pathnex-IGW"
+        }
+    }
+
+
+
+    KUBERNETES -- create config map
+
+
+    apiversion:v1
+    kind: configmap
+     metadata:
+       name: pathnex-config
+    data:
+    APP_MODE:"production"
+    WELCOME_MSG: "hello pathnex"
