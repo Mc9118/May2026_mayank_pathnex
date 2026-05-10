@@ -1,0 +1,53 @@
+--- 
+- name: Install tool based on options
+hosts: all 
+become:yes
+
+
+  tasks: 
+    -name: Install tool based on OS 
+    yum:
+      name:htop
+      state: present 
+      when: ansible_facts['os family'] == "RedHat"
+
+
+       
+
+       Kubernetes - secret 
+
+
+  apiversion: v1
+  kind:secret
+  metadata:
+    name: pathnex-secret
+ type: pathnex-secret
+ data:
+    password: hdjfehfw== #"pathnex123"
+
+
+
+#!/bin/bash
+
+for i in {1..10}; do
+  echo "Number: $i"
+done
+
+
+
+You will learn how to **cache dependencies in GitLab CI**.
+
+stages:
+  - build
+
+build:
+  stage: build
+  image: maven:3.8.1-jdk-17
+  cache:
+    key: maven-cache
+    paths:
+    - .m2/repository
+  script:
+    - git clone https://github.com/Pathnex/sample-java-app.git
+    - cd sample-java-app
+    - mvn clean compile
