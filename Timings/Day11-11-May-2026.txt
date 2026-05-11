@@ -1,0 +1,12 @@
+what i did today
+live session:3hr
+docker -2hr
+hands on practice repo -30min
+
+
+tommorrow:
+
+live session 
+docker 
+hands on practice repo 
+linux
