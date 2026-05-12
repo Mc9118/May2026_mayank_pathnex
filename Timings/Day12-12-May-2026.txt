@@ -1,0 +1,9 @@
+what i did today:
+live session - 2.30 hr
+docker - 2.30hr
+kubernetes - 1hr
+L1 repo code -30min
+
+tommorrow:
+k8 
+live session
