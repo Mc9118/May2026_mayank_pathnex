@@ -1,1 +1,33 @@
 
+---
+ - name : Install java on pathnex server 
+ hosts : all
+ become : yes
+
+
+   tasks:
+     - name : install open jdk
+     yum:
+      name : java-11-openjdk
+      state : present 
+
+
+      -name : set JAVA-11-openjdk
+      lineinfile:
+        path: /etc/profile
+        line: 'eport JAVA_HOME=/usr/lib/jvm/java-11-openjdk'
+
+
+
+
+
+        teraform - create s3 bucket 
+
+        provider "aws" {
+          region "aws_s3_bucket" 
+
+          tags = {
+            Name = "pathnexBucket"
+            
+          }
+        }
