@@ -1,1 +1,19 @@
 
+
+--- 
+
+- name: Deploy qpp from git for pathnex 
+hosts: all 
+become: yes 
+
+ tasks:
+    - name: Install git
+    yum:
+      name: git
+      state: present 
+
+
+      - name: clone repository
+      git :
+         repo  "https://github.com/pathnex/app.git"
+        dest:  "/opt/pathnex-app"
